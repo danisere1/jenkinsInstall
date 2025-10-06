@@ -1,0 +1,21 @@
+startServices: true
+
+replicaCount: 1
+
+extraEnvVars:
+  - name: SERVICES
+    value: "s3,sqs,lambda,cloudwatch"
+  - name: AWS_ACCESS_KEY_ID
+    value: test
+  - name: AWS_SECRET_ACCESS_KEY
+    value: test
+
+image:
+  repository: localstack/localstack
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  ports:
+    edge: 4566
