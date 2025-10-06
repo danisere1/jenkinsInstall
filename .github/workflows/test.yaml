@@ -17,5 +17,3 @@ jobs:
 
       - name: Run tests
         run: bats test.bats
-          
-      # Add additional steps to run your tests here
