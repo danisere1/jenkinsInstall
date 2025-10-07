@@ -23,10 +23,11 @@
 @test "Check if jenkins is up" {
   run curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/login
   [ "$status" -eq 0 ]
-  [ "$output" -eq 200 ] || [ "$output" -eq 000 ]
+  [ "$output" -eq 200 ]
 }
 
 @test "Check if localstack is up" {
-  run curl -s -o /dev/null -w "%{http_code}" http://localhost:4556
-  [ "$output" -eq 200 ] || [ "$output" -eq 000 ]
+  run curl -s -o /dev/null -w "%{http_code}" http://localhost:4566/_localstack/health
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 200 ]
 }
