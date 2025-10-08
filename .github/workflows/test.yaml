@@ -1,9 +1,6 @@
 name: Test Installer Jenkins
 
 on: 
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
