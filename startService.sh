@@ -1,12 +1,12 @@
 #!/bin/bash
 
 checkRepo() {
-  local ADD_REPO=$(helm repo list | grep $1 || true)
+  "local ADD_REPO = $(helm repo list | grep "$1" || true)"
   echo "$ADD_REPO" 
 }
 
 checkInstall() {
-  local INSTALLED=$(helm list --short -n $NAMESPACE | grep $1 || true)
+  "local INSTALLED = $(helm list --short -n $NAMESPACE | grep "$1" || true)"
   echo "$INSTALLED"
 }
 
