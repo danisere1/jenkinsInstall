@@ -150,7 +150,7 @@ echo "⏳ Waiting for pods to be ready..."
 # Wait for all pods to be Running
 for NS in $NS_JENKINS $NS_MONITORING $NS_SONAR; do
   while true; do
-    NOT_RUNNING=$(kubectl get pods -n $NS --no-headers | awk '$3 != "Running"' | awk '$3 != "Completed"' || true)
+    NOT_RUNNING=$(kubectl get pods -n "$NS" --no-headers | awk '$3 != "Running"' | awk '$3 != "Completed"' || true)
     if [[ -n "$NOT_RUNNING" ]]; then
       echo "⏳ Waiting 5s more..."
       sleep 5
