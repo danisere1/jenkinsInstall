@@ -408,10 +408,12 @@ controller:
   # Plugins will be installed during Jenkins controller start
   # -- List of Jenkins plugins to install. If you don't want to install plugins, set it to `false`
   installPlugins:
-    - kubernetes:4358.vcfd9c5a_0a_f51
-    - workflow-aggregator:608.v67378e9d3db_1
-    - git:5.7.0
-    - configuration-as-code:1985.vdda_32d0c4ea_b_
+    - kubernetes
+    - workflow-aggregator
+    - git
+    - configuration-as-code
+    - sonar
+    - prometheus
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
   # -- Download the minimum required version or latest version of all dependencies
@@ -1104,11 +1106,11 @@ agent:
   #   jenkins-agent: v1
 
   # -- Command to execute when side container starts
-  command:
+  #command:
   # -- Arguments passed to command to execute
-  args: "${computer.jnlpmac} ${computer.name}"
+  #args: "${computer.jnlpmac} ${computer.name}"
   # -- Side container name
-  sideContainerName: "jnlp"
+  #sideContainerName: "jnlp"
 
   # Doesn't allocate pseudo TTY by default
   # -- Allocate pseudo tty to the side container
