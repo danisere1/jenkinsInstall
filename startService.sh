@@ -143,7 +143,8 @@ else
   echo "✅ Grafana is already installed in namespace '$NS_MONITORING'."
 fi
 
-kubectl delete pod jenkins-0 -n jenkins
+kubectl delete pod jenkins-0 -n $NS_JENKINS
+kubectl delete pod sonarqube-sonarqube-0 -n $NS_SONAR
 
 echo "⏳ Waiting for pods to be ready..."
 
